@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
-const operators = ['+', '-', '*', '/']
+const operators = ['+', '-', '*', '/', '%']
 
 function App() {
   const [display, setDisplay] = useState('0')
@@ -15,6 +15,7 @@ function App() {
     if (operator === '-') return a - b
     if (operator === '*') return a * b
     if (operator === '/') return b === 0 ? 'Error' : a / b
+    if (operator === '%') return b === 0 ? 'Error' : a % b
   }
 
   const formatResult = (value) => {
@@ -104,7 +105,7 @@ function App() {
   })
 
   const buttons = [
-    ['', 'spacer', ''], ['⌫', 'backspace', 'utility'], ['÷', 'operator', '/'], ['AC', 'clear', 'clear'],
+    ['%', 'operator', '%'], ['⌫', 'backspace', 'utility'], ['÷', 'operator', '/'], ['AC', 'clear', 'clear'],
     ['7', 'digit', '7'], ['8', 'digit', '8'], ['9', 'digit', '9'], ['×', 'operator', '*'],
     ['4', 'digit', '4'], ['5', 'digit', '5'], ['6', 'digit', '6'], ['−', 'operator', '-'],
     ['1', 'digit', '1'], ['2', 'digit', '2'], ['3', 'digit', '3'], ['+', 'operator', '+'],
