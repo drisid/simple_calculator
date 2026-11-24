@@ -104,7 +104,7 @@ function App() {
   })
 
   const buttons = [
-    ['AC', 'clear', 'clear'], ['⌫', 'backspace', 'utility'], ['', 'spacer', ''], ['÷', 'operator', '/'],
+    ['', 'spacer', ''], ['⌫', 'backspace', 'utility'], ['÷', 'operator', '/'], ['AC', 'clear', 'clear'],
     ['7', 'digit', '7'], ['8', 'digit', '8'], ['9', 'digit', '9'], ['×', 'operator', '*'],
     ['4', 'digit', '4'], ['5', 'digit', '5'], ['6', 'digit', '6'], ['−', 'operator', '-'],
     ['1', 'digit', '1'], ['2', 'digit', '2'], ['3', 'digit', '3'], ['+', 'operator', '+'],
