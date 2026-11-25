@@ -80,6 +80,12 @@ function App() {
     setWaitingForOperand(true)
   }
 
+  const cancel = () => {
+    setDisplay('0')
+    setExpression('')
+    setWaitingForOperand(false)
+  }
+
   const clear = () => {
     setDisplay('0')
     setExpression('')
@@ -98,6 +104,7 @@ function App() {
       else if (operators.includes(event.key)) chooseOperator(event.key)
       else if (event.key === 'Enter' || event.key === '=') equals()
       else if (event.key === 'Escape') clear()
+      else if (event.key.toLowerCase() === 'c') cancel()
       else if (event.key === 'Backspace') backspace()
     }
     window.addEventListener('keydown', handleKeyDown)
@@ -105,7 +112,7 @@ function App() {
   })
 
   const buttons = [
-    ['%', 'operator', '%'], ['⌫', 'backspace', 'utility'], ['÷', 'operator', '/'], ['AC', 'clear', 'clear'],
+    ['C', 'cancel', 'cancel'], ['%', 'operator', '%'], ['÷', 'operator', '/'], ['AC', 'clear', 'clear'],
     ['7', 'digit', '7'], ['8', 'digit', '8'], ['9', 'digit', '9'], ['×', 'operator', '*'],
     ['4', 'digit', '4'], ['5', 'digit', '5'], ['6', 'digit', '6'], ['−', 'operator', '-'],
     ['1', 'digit', '1'], ['2', 'digit', '2'], ['3', 'digit', '3'], ['+', 'operator', '+'],
@@ -128,6 +135,7 @@ function App() {
               type="button"
               onClick={() => {
                 if (value === 'clear') clear()
+                else if (value === 'cancel') cancel()
                 else if (value === 'backspace') backspace()
                 else if (value === '.') inputDecimal()
                 else if (value === '=') equals()
